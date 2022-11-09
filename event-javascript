@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 11 Mandiri JS - Aufa Zaki</title>
+</head>
+<style>
+    .box {
+        background-color: #00A2B9;
+        padding: 20px;
+        margin: 20px;
+        margin-left: 500px;
+        margin-right: 500px;
+        border-radius: 20px;
+        text-align: center;
+
+
+    }
+
+    h2 {
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+        text-decoration: underline;
+        
+    }
+
+    h3 {
+        font-family: arial;
+    }
+
+    header {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: large;
+        
+    }
+
+    img {
+        height: 30px;
+    }
+</style>
+<body>
+    <header>
+        <strong>Tugas Pertemuan 11 JavaScript</strong>    
+    </header>
+    <div class="box">
+        <h2>
+            Mouse Event
+        </h2>
+        <button id="btn-out">Dekati saya</button>
+    </div>
+    
+    <div class="box">
+        <h2>
+            Keyboard Event 
+        </h2>
+        <h3 id="keydown">Tekan Huruf pada Keyboard :</h3>
+    </div>
+    
+    <div class="box">
+        <h2>
+            Event Change
+        </h2>
+        <div id="info"></div>
+        <label for="buah">Pilih Buah</label>
+        <select name="buah" id="buah">
+          <option>Apel</option>
+          <option>Mangga</option>
+          <option>Jeruk</option>
+        </select>
+    </div>
+</body>
+<script>
+
+    const btnOut = document.getElementById("btn-out")
+    const keydown = document.getElementById("keydown");
+    const buah = document.getElementById('buah');
+    const info = document.getElementById('info');
+
+
+    btnOut.addEventListener("mouseover", function(event) {
+      event.target.innerHTML = "ini Mouse Event dengan mouseover";
+    });
+
+
+    document.addEventListener("keydown", function (event) {
+      keydown.innerText = `Hasilnya: ${event.key}`;
+    });
+
+    buah.addEventListener('change', function(e){
+    info.innerText = `Anda memilih: ${e.target.value}`;
+    });
+</script>
+</html>
